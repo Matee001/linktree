@@ -1,3 +1,3 @@
-hiya.
-go away
-bye
+hiya!
+go away!
+bye!
