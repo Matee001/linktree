@@ -1,98 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>404 Error Page</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
-        @import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
-
-        body {
-          background-color: #FDFAF5;
-          margin: 0;
-          padding: 0;
-          font-family: 'Montserrat', Helvetica, sans-serif;
-          display: flex;
-          justify-content: center;
-          align-items: center;
-          height: 100vh;
-        }
-
-        h1 {
-          text-align: center;
-          margin: 0;
-        }
-
-        .error-container {
-          text-align: center;
-          font-family: 'Catamaran', sans-serif;
-          font-weight: 800;
-          margin: 0;
-        }
-
-        .error-container > span {
-          display: inline-block;
-          position: relative;
-        }
-
-        /* Dynamic sizing for 404 based on screen width */
-        .error-container {
-          font-size: calc(10vw + 30px); /* Responsive font size */
-        }
-
-        .error-container > span.four,
-        .error-container > span.zero {
-          display: inline-block;
-          background:
-            linear-gradient(140deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 43%, transparent 44%, transparent 100%),
-            linear-gradient(105deg, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.06) 41%, rgba(0, 0, 0, 0.07) 76%, transparent 77%, transparent 100%),
-            linear-gradient(to right, #d89ca4, #e27b7e);
-          border-radius: 999px;
-          margin: 10px;
-        }
-
-        .error-container > span.zero {
-          vertical-align: text-top;
-          background:
-            linear-gradient(-45deg, transparent 0%, rgba(0, 0, 0, 0.06) 50%, transparent 51%, transparent 100%),
-            linear-gradient(to top right, #99749D, #B895AB, #CC9AA6, #D7969E, #ED8687);
-        }
-
-        /* Smaller devices (phones) */
-        @media screen and (max-width: 600px) {
-          .error-container {
-            font-size: calc(20vw + 30px); /* Increase the size for small screens */
-          }
-        }
-
-        .link-container {
-          text-align: center;
-          margin-top: 30px;
-        }
-
-        a.more-link {
-          text-transform: uppercase;
-          font-size: 13px;
-          background-color: #de7e85;
-          padding: 10px 15px;
-          color: #fff;
-          display: inline-block;
-          text-decoration: none;
-          letter-spacing: 1px;
-        }
-
-    </style>
+    <meta charset="utf-8">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <meta name='viewport' content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0'>
+    <link rel="shortcut icon" href="assets/images/favicon.png" type="image/webp">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon.png">
+    <link rel="icon" href="assets/images/favicon.png" type="image/webp">
+    <title>Máté Kovács</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 </head>
 <body>
-    <h1>404 Error Page</h1>
-    <section class="error-container">
-        <span class="four">4</span>
-        <span class="zero">0</span>
-        <span class="four">4</span>
+    <!-- Snowfall Background Animation -->
+    <section class="animated-background">
+        <div id="stars1"></div>
+        <div id="stars2"></div>
+        <div id="stars3"></div>
     </section>
-    <div class="link-container">
-        <a target="_blank" href="https://www.silocreativo.com/en/creative-examples-404-error-css/" class="more-link">Visit the original article</a>
+    <!-- End of Snowfall Background Animation -->
+
+    <div class="min-h-full flex-h-center" id="background_div">
+        <input type="hidden" value="https://bio.link" id="app-url">
+        <input type="hidden" value="null" id="is-featured">
+        <canvas id="bg-canvas" class="background-overlay"></canvas>
+
+        <div class="mt-48 page-full-wrap relative">
+            <input type="hidden" value="creator-page" id="page-type">
+            <img class="display-image m-auto" data-src="assets/images/logo.png" src="assets/images/profile.jpg" alt="[Profilép]"/>
+            <h2 class="page-title page-text-color page-text-font mt-16 text-center">Máté Kovács</h2>
+            
+            <div class="mt-24">
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://github.com/Matee001" data-id="261685" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/github.png" src="assets/images/github.png" alt="GitHub"/>
+                        <span class="item-title text-center">GitHub</span>
+                    </a>
+                </div>
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://www.facebook.com/profile.php?id=100077247649632" data-id="261685" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/facebook.png" src="assets/images/facebook.png" alt="Facebook"/>
+                        <span class="item-title text-center">Facebook</span>
+                    </a>
+                </div>
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://x.com/k_matee01" data-id="261652" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/x.png" src="assets/images/x.png" alt="X"/>
+                        <span class="item-title text-center">X</span>
+                    </a>
+                </div>
+                <!-- New TikTok Tile -->
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://www.tiktok.com/@k_matee01" data-id="261652" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/tiktok.png" src="assets/images/tiktok.png" alt="TikTok"/>
+                        <span class="item-title text-center">TikTok</span>
+                    </a>
+                </div>
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://www.instagram.com/k_matee01" data-id="261685" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/instagram.png" src="assets/images/instagram.png" alt="Instagram"/>
+                        <span class="item-title text-center">Instagram</span>
+                    </a>
+                </div>
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://discordapp.com/users/966630898793578526" data-id="261685" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/discord.png" src="assets/images/discord.png" alt="Discord"/>
+                        <span class="item-title text-center">Discord</span>
+                    </a>
+                </div>
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a target="_blank" class="page-item-each py-10 flex-both-center" href="https://www.reddit.com/user/mtkvcs1/" data-id="261685" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/reddit.png" src="assets/images/reddit.jpg" alt="Reddit"/>
+                        <span class="item-title text-center">Reddit</span>
+                    </a>
+                </div>
+                <div class="page-item-wrap relative">
+                    <div class="page-item flex-both-center absolute"></div>
+                    <a class="page-item-each py-10 flex-both-center" href="mailto:hello@matee.xyz" data-id="261685" data-type="page_item">
+                        <img class="link-each-image" data-src="assets/images/email.png" src="assets/images/mail1.png" alt="E-mail"/>
+                        <span class="item-title text-center">Email</span>
+                    </a>
+                </div>
+            </div>                                                                                
+        </div>
     </div>
 </body>
 </html>
