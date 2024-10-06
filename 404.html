@@ -23,18 +23,6 @@
       transform-style: preserve-3d;
     }
 
-    @property --swing-x {
-      initial-value: 0;
-      inherits: false;
-      syntax: '<integer>';
-    }
-
-    @property --swing-y {
-      initial-value: 0;
-      inherits: false;
-      syntax: '<integer>';
-    }
-
     body {
       min-height: 100vh;
       display: flex;
@@ -63,29 +51,28 @@
     }
 
     h1 {
-      animation: swing var(--speed) infinite alternate ease-in-out;
-      font-size: clamp(3rem, 20vmin, 10rem); /* Adjusted for mobile */
+      position: relative;
+      font-size: clamp(3rem, 20vmin, 10rem); /* Adjust for mobile */
       font-family: 'Open Sans', sans-serif;
       margin: 0;
       margin-bottom: 1rem;
       letter-spacing: 1rem;
-      transform: translate3d(0, 0, 0vmin);
-      --x: calc(50% + (var(--swing-x) * 0.5) * 1%);
-      background: radial-gradient(var(--lit-header), var(--header) 45%) var(--x) 100% / 200% 200%;
+      background: radial-gradient(var(--lit-header), var(--header) 45%);
       -webkit-background-clip: text;
       color: transparent;
-      position: relative;
+      text-align: center; /* Center text on mobile */
     }
 
     h1:after {
-      animation: swing var(--speed) infinite alternate ease-in-out;
       content: "404";
       position: absolute;
       top: 0;
       left: 0;
+      right: 0;
+      text-align: center;
       color: var(--shadow);
-      filter: blur(0.75vmin); /* Reduced blur for mobile */
-      transform: scale(1.05) translate3d(0, 12%, -10vmin) translate(calc((var(--swing-x, 0) * 0.05) * 1%), calc((var(--swing-y) * 0.05) * 1%));
+      font-size: clamp(3rem, 20vmin, 10rem); /* Ensure shadow stays same size */
+      filter: blur(0.75vmin);
     }
 
     .cloak {
@@ -93,7 +80,6 @@
       height: 100%;
       width: 100%;
       transform-origin: 50% 30%;
-      transform: rotate(calc(var(--swing-x) * -0.25deg));
       background: radial-gradient(40% 40% at 50% 42%, transparent, black 35%);
     }
 
@@ -142,11 +128,15 @@
     /* Media query for mobile devices */
     @media (max-width: 768px) {
       h1 {
-        font-size: clamp(2rem, 15vmin, 7rem); /* Smaller for mobile */
+        font-size: clamp(2rem, 15vmin, 7rem); /* Smaller font for mobile */
       }
 
       h1:after {
-        filter: blur(0.5vmin); /* Further reduce blur for better visibility */
+        filter: blur(0.5vmin); /* Reduced blur for mobile */
+      }
+
+      .cloak__container {
+        display: none; /* Hide cloak on small screens */
       }
     }
   </style>
