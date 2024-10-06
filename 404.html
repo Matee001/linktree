@@ -15,14 +15,15 @@
           font-family: 'Montserrat', Helvetica, sans-serif;
           display: flex;
           flex-direction: column;
-          justify-content: space-between; /* Adjusts the layout */
+          justify-content: space-between;
           align-items: center;
           height: 100vh;
         }
 
         h1 {
           text-align: center;
-          margin-top: 20px; /* Pushes the error message slightly down */
+          margin-top: 20px;
+          margin-bottom: 20px; /* Brings the text closer to the 404 */
         }
 
         .error-container {
@@ -37,9 +38,9 @@
           position: relative;
         }
 
-        /* Dynamic sizing for 404 based on screen width */
+        /* Larger size for 404 numbers */
         .error-container {
-          font-size: calc(10vw + 30px); /* Responsive font size */
+          font-size: calc(15vw + 40px); /* Larger size for desktop and responsive scaling */
         }
 
         .error-container > span.four,
@@ -63,13 +64,13 @@
         /* Smaller devices (phones) */
         @media screen and (max-width: 600px) {
           .error-container {
-            font-size: calc(20vw + 30px); /* Increase the size for small screens */
+            font-size: calc(25vw + 40px); /* Larger size for small screens */
           }
         }
 
         .link-container {
           text-align: center;
-          margin-bottom: 30px; /* Positions the button at the bottom */
+          margin-bottom: 20px; /* Brings the button closer to the 404 */
         }
 
         a.more-link {
