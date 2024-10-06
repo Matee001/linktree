@@ -1,74 +1,94 @@
-@function multiple-shadow($length) {
-    $value: 2px -1px 0 #000;
-    @for $i from 2 through $length {
-        $ho: $i * 2;
-        $vo: -#{$ho / 2};
-        $col: hsl(0deg, 0%, $i * 2%);
-        $value: $value, #{$ho}px #{$vo}px 0 $col;
-    }
-    @return $value;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 Page</title>
+    <style>
+        @function multiple-shadow($length) {
+            $value: 2px -1px 0 #000;
+            @for $i from 2 through $length {
+                $ho: $i * 2;
+                $vo: -#{$ho / 2};
+                $col: hsl(0deg, 0%, $i * 2%);
+                $value: $value, #{$ho}px #{$vo}px 0 $col;
+            }
+            @return $value;
+        }
 
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    margin: 0;
-    background-color: #f4f4f4;
-}
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
 
-div {
-    width: 100%;
-    text-align: center;
-}
+        div {
+            width: 100%;
+            text-align: center;
+        }
 
-.number {
-    background: #fff;
-    position: relative;
-    font: 900 30vmin 'Consolas';
-    letter-spacing: 5vmin;
-    text-shadow: multiple-shadow(8);
-}
+        .number {
+            background: #fff;
+            position: relative;
+            font: 900 30vmin 'Consolas';
+            letter-spacing: 5vmin;
+            text-shadow: multiple-shadow(8);
+        }
 
-.number::before,
-.number::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: #673ab7;
-    background-image: radial-gradient(closest-side at 50% 50%, #ffc107 100%, rgba(0, 0, 0, 0)),
-                      radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
-    background-repeat: repeat-x;
-    background-size: 40vmin 40vmin;
-    background-position: -100vmin 20vmin, 100vmin -25vmin;
-    mix-blend-mode: screen;
-    animation: moving 10s linear infinite both;
-}
+        .number::before,
+        .number::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: #673ab7;
+            background-image: radial-gradient(closest-side at 50% 50%, #ffc107 100%, rgba(0, 0, 0, 0)),
+                              radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
+            background-repeat: repeat-x;
+            background-size: 40vmin 40vmin;
+            background-position: -100vmin 20vmin, 100vmin -25vmin;
+            mix-blend-mode: screen;
+            animation: moving 10s linear infinite both;
+        }
 
-@keyframes moving {
-    to {
-        background-position: 100vmin 20vmin, -100vmin -25vmin;
-    }
-}
+        @keyframes moving {
+            to {
+                background-position: 100vmin 20vmin, -100vmin -25vmin;
+            }
+        }
 
-.text {
-    font-family: 'Courgette', cursive;
-    font-size: 5vmin;
-    font-weight: 400;
-}
+        .text {
+            font-family: 'Courgette', cursive;
+            font-size: 5vmin;
+            font-weight: 400;
+        }
 
-.text span {
-    font-size: 10vmin;
-}
+        .text span {
+            font-size: 10vmin;
+        }
 
-a.me {
-    text-decoration: none;
-    color: #673ab7;
-    font-size: 2vmin;
-    margin-top: 20px;
-}
+        a.me {
+            text-decoration: none;
+            color: #673ab7;
+            font-size: 2vmin;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="number">
+        404
+    </div>
+    <div class="text">
+        <span>Hmmm...</span>
+        <br>Page not found
+    </div>
+    <a class="me" href="https://codepen.io/uzcho_/pens/popular/?grid_type=list" target="_blank">Visit CodePen</a>
+</body>
+</html>
