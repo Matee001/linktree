@@ -1,157 +1,74 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>404 Page</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@800&family=Roboto:wght@100;300&display=swap');
-
-    :root {
-      --button: hsl(44, 0%, 70%);
-      --button-color: hsl(0, 0%, 4%);
-      --shadow: hsl(0, 0%, 0%);
-      --bg: hsl(53, 0%, 45%);
-      --header: hsl(53, 0%, 48%);
-      --color: hsl(0, 0%, 98%);
-      --lit-header: hsl(53, 0%, 90%);
-      --speed: 2s;
+@function multiple-shadow($length) {
+    $value: 2px -1px 0 #000;
+    @for $i from 2 through $length {
+        $ho: $i * 2;
+        $vo: -#{$ho / 2};
+        $col: hsl(0deg, 0%, $i * 2%);
+        $value: $value, #{$ho}px #{$vo}px 0 $col;
     }
+    @return $value;
+}
 
-    * {
-      box-sizing: border-box;
-      transform-style: preserve-3d;
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    background-color: #f4f4f4;
+}
+
+div {
+    width: 100%;
+    text-align: center;
+}
+
+.number {
+    background: #fff;
+    position: relative;
+    font: 900 30vmin 'Consolas';
+    letter-spacing: 5vmin;
+    text-shadow: multiple-shadow(8);
+}
+
+.number::before,
+.number::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #673ab7;
+    background-image: radial-gradient(closest-side at 50% 50%, #ffc107 100%, rgba(0, 0, 0, 0)),
+                      radial-gradient(closest-side at 50% 50%, #e91e63 100%, rgba(0, 0, 0, 0));
+    background-repeat: repeat-x;
+    background-size: 40vmin 40vmin;
+    background-position: -100vmin 20vmin, 100vmin -25vmin;
+    mix-blend-mode: screen;
+    animation: moving 10s linear infinite both;
+}
+
+@keyframes moving {
+    to {
+        background-position: 100vmin 20vmin, -100vmin -25vmin;
     }
+}
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      font-family: 'Roboto', sans-serif;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      background: var(--bg);
-      color: var(--color);
-      perspective: 1200px;
-    }
+.text {
+    font-family: 'Courgette', cursive;
+    font-size: 5vmin;
+    font-weight: 400;
+}
 
-    a {
-      text-transform: uppercase;
-      text-decoration: none;
-      background: var(--button);
-      color: var(--button-color);
-      padding: 1rem 4rem;
-      border-radius: 4rem;
-      font-size: 0.875rem;
-      letter-spacing: 0.05rem;
-    }
+.text span {
+    font-size: 10vmin;
+}
 
-    p {
-      font-weight: 100;
-    }
-
-    h1 {
-      position: relative;
-      font-size: clamp(3rem, 20vmin, 10rem); /* Adjust for mobile */
-      font-family: 'Open Sans', sans-serif;
-      margin: 0;
-      margin-bottom: 1rem;
-      letter-spacing: 1rem;
-      background: radial-gradient(var(--lit-header), var(--header) 45%);
-      -webkit-background-clip: text;
-      color: transparent;
-      text-align: center; /* Center text on mobile */
-    }
-
-    h1:after {
-      content: "404";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      text-align: center;
-      color: var(--shadow);
-      font-size: clamp(3rem, 20vmin, 10rem); /* Ensure shadow stays same size */
-      filter: blur(0.75vmin);
-    }
-
-    .cloak {
-      animation: swing var(--speed) infinite alternate-reverse ease-in-out;
-      height: 100%;
-      width: 100%;
-      transform-origin: 50% 30%;
-      background: radial-gradient(40% 40% at 50% 42%, transparent, black 35%);
-    }
-
-    .cloak__wrapper {
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
-      right: 0;
-      overflow: hidden;
-    }
-
-    .cloak__container {
-      height: 250vmax;
-      width: 250vmax;
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-    }
-
-    .info {
-      text-align: center;
-      line-height: 1.5;
-      max-width: clamp(16rem, 90vmin, 25rem);
-    }
-
-    .info > p {
-      margin-bottom: 3rem;
-    }
-
-    @keyframes swing {
-      0% {
-        --swing-x: -100;
-        --swing-y: -100;
-      }
-      50% {
-        --swing-y: 0;
-      }
-      100% {
-        --swing-y: -100;
-        --swing-x: 100;
-      }
-    }
-
-    /* Media query for mobile devices */
-    @media (max-width: 768px) {
-      h1 {
-        font-size: clamp(2rem, 15vmin, 7rem); /* Smaller font for mobile */
-      }
-
-      h1:after {
-        filter: blur(0.5vmin); /* Reduced blur for mobile */
-      }
-
-      .cloak__container {
-        display: none; /* Hide cloak on small screens */
-      }
-    }
-  </style>
-</head>
-<body>
-  <h1>404</h1>
-  <div class="cloak__wrapper">
-    <div class="cloak__container">
-      <div class="cloak"></div>
-    </div>
-  </div>
-  <div class="info">
-    <h2>We can't find that page</h2>
-    <p>We're fairly sure that page used to be here, but seems to have gone missing. We do apologise on its behalf.</p>
-    <a href="https://jhey.dev" target="_blank" rel="noreferrer noopener">Home</a>
-  </div>
-</body>
-</html>
+a.me {
+    text-decoration: none;
+    color: #673ab7;
+    font-size: 2vmin;
+    margin-top: 20px;
+}
