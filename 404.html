@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404</title>
+    <link rel="icon" href="error.png" type="image/png"> <!-- Favicon added -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
         @import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
@@ -15,15 +16,15 @@
           font-family: 'Montserrat', Helvetica, sans-serif;
           display: flex;
           flex-direction: column;
-          justify-content: space-between;
+          justify-content: center; /* Center vertically */
           align-items: center;
           height: 100vh;
         }
 
         h1 {
           text-align: center;
-          margin-top: 20px;
-          margin-bottom: 20px; /* Brings the text closer to the 404 */
+          margin-top: 10px; /* Reduced margin */
+          margin-bottom: 5px; /* Reduced margin */
         }
 
         .error-container {
@@ -33,25 +34,26 @@
           margin: 0;
         }
 
-        .error-container > span {
-          display: inline-block;
-          position: relative;
-        }
-
         /* Larger size for 404 numbers */
         .error-container {
           font-size: calc(15vw + 40px); /* Larger size for desktop and responsive scaling */
         }
 
+        .error-container > span,
         .error-container > span.four,
         .error-container > span.zero {
           display: inline-block;
+          position: relative;
+          margin: 0 5px; /* Closer spacing between numbers */
+        }
+
+        .error-container > span.four,
+        .error-container > span.zero {
           background:
             linear-gradient(140deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 43%, transparent 44%, transparent 100%),
             linear-gradient(105deg, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.06) 41%, rgba(0, 0, 0, 0.07) 76%, transparent 77%, transparent 100%),
             linear-gradient(to right, #d89ca4, #e27b7e);
           border-radius: 999px;
-          margin: 10px;
         }
 
         .error-container > span.zero {
@@ -70,18 +72,20 @@
 
         .link-container {
           text-align: center;
-          margin-bottom: 20px; /* Brings the button closer to the 404 */
+          margin-top: 10px; /* Reduced margin */
+          margin-bottom: 10px; /* Reduced margin */
         }
 
         a.more-link {
           text-transform: uppercase;
-          font-size: 13px;
+          font-size: 16px; /* Increased font size for button */
           background-color: #de7e85;
-          padding: 10px 15px;
+          padding: 15px 25px; /* Increased padding for a larger button */
           color: #fff;
           display: inline-block;
           text-decoration: none;
           letter-spacing: 1px;
+          border-radius: 5px; /* Slight rounding of button corners */
         }
     </style>
 </head>
