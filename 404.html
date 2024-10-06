@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>404</title>
-    <link rel="icon" href="error.png" type="image/png"> <!-- Favicon added -->
+    <link rel="icon" href="/assets/images/error.png" type="image/png"> <!-- Favicon added -->
     <style>
         @import url('https://fonts.googleapis.com/css?family=Montserrat:400,600,700');
         @import url('https://fonts.googleapis.com/css?family=Catamaran:400,800');
@@ -23,8 +23,8 @@
 
         h1 {
           text-align: center;
-          margin-top: 10px; /* Reduced margin */
-          margin-bottom: 5px; /* Reduced margin */
+          margin-top: 20px; /* Increased margin for distance from 404 */
+          margin-bottom: 20px; /* Increased margin for distance from 404 */
         }
 
         .error-container {
@@ -49,6 +49,7 @@
 
         .error-container > span.four,
         .error-container > span.zero {
+          display: inline-block;
           background:
             linear-gradient(140deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.07) 43%, transparent 44%, transparent 100%),
             linear-gradient(105deg, transparent 0%, transparent 40%, rgba(0, 0, 0, 0.06) 41%, rgba(0, 0, 0, 0.07) 76%, transparent 77%, transparent 100%),
@@ -72,8 +73,8 @@
 
         .link-container {
           text-align: center;
-          margin-top: 10px; /* Reduced margin */
-          margin-bottom: 10px; /* Reduced margin */
+          margin-top: 30px; /* Increased margin for distance from 404 */
+          margin-bottom: 10px; /* Reduced margin for bottom spacing */
         }
 
         a.more-link {
