@@ -14,14 +14,15 @@
           padding: 0;
           font-family: 'Montserrat', Helvetica, sans-serif;
           display: flex;
-          justify-content: center;
+          flex-direction: column;
+          justify-content: space-between; /* Adjusts the layout */
           align-items: center;
           height: 100vh;
         }
 
         h1 {
           text-align: center;
-          margin: 0;
+          margin-top: 20px; /* Pushes the error message slightly down */
         }
 
         .error-container {
@@ -68,7 +69,7 @@
 
         .link-container {
           text-align: center;
-          margin-top: 30px;
+          margin-bottom: 30px; /* Positions the button at the bottom */
         }
 
         a.more-link {
@@ -81,11 +82,10 @@
           text-decoration: none;
           letter-spacing: 1px;
         }
-
     </style>
 </head>
 <body>
-    <h1>Bizos jó helyen vagy?</h1>
+    <h1>Biztos jó helyen vagy?</h1> <!-- Error message at the top -->
     <section class="error-container">
         <span class="four">4</span>
         <span class="zero">0</span>
