@@ -9,6 +9,24 @@
     <link rel="icon" href="assets/images/favicon.png" type="image/webp">
     <title>Máté Kovács</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Ensure the body takes full height */
+        }
+        #background_div {
+            flex: 1; /* Make this div take remaining space */
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Center content vertically */
+            align-items: center; /* Center content horizontally */
+        }
+        .storage-link {
+            margin-top: auto; /* Push the link to the bottom */
+            text-align: center; /* Center the link text */
+        }
+    </style>
 </head>
 <body>
     <!-- Snowfall Background Animation -->
@@ -88,6 +106,11 @@
                     </a>
                 </div>
             </div>                                                                                
+        </div>
+        
+        <!-- New storage link -->
+        <div class="storage-link">
+            <a href="https://store.matee.xyz" target="_blank">Go to storage</a>
         </div>
     </div>
 </body>
